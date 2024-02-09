@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/rfid-uuid-converter/sw.js', { scope: '/rfid-uuid-converter/' })})}
