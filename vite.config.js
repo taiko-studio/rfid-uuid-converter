@@ -11,10 +11,27 @@ export default defineConfig({
   plugins: [
     react(),
     VitePWA({
+      mode: 'development',
+      base: "/rfid-uuid-converter/",
       registerType: 'autoUpdate',
+      injectRegister: 'auto',
+      includeAssets: ['favicon.svg'],
+      manifest: {
+        // icons: [
+
+        //   {
+        //     src: 'public/pwa-512x512.png', // <== don't remove slash, for testing
+        //     sizes: '512x512',
+        //     type: 'image/png',
+        //   },
+
+        // ],
+      },
       workbox: {
-        clientsClaim: true,
-        skipWaiting: true
+        // clientsClaim: true,
+        // skipWaiting: true
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,json,vue,txt,woff2}']
+
       }
     })
   ],
